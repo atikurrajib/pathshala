@@ -1,2 +1,2 @@
-### PATHSHALA
-# A modern web-based student management system
+# PATHSHALA
+### A modern web-based student management system
