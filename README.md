@@ -1,7 +1,8 @@
+<div align="center">
 # 🏫 Welcomne to Pathshala
 
 ✨ **Pathshala** is a robust, full-stack Student Management System (SMS) designed to digitize and streamline academic administration. Built with a focus on high performance and security, it provides a centralized platform for managing student records, academic progress, and institutional data. ✨
-
+</div>
 ---
 
 ## 💻 Project Overview
@@ -68,17 +69,17 @@ Pathshala utilizes a modern **Decoupled Architecture**. The React frontend serve
 
 ### Installation
 1. **Clone the repository:**
-```bash
+   ```bash
 git clone [https://github.com/your-username/pathshala.git](https://github.com/your-username/pathshala.git)
 
 2. **Backend Setup:**
-```bash
+   ```bash
 cd pathshala-backend
 cp app.env.example app.env # Configure your DB credentials
 go run main.go
 
 3. **Frontend Setup:**
-```bash
+   ```bash
 cd pathshala-frontend
 npm install
 npm run dev
