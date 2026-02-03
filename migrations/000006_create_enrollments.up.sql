@@ -4,3 +4,5 @@ CREATE TABLE "enrollments" (
   "course_id" integer REFERENCES "courses" ("id") ON DELETE CASCADE,
   "enrollment_date" date DEFAULT CURRENT_DATE
 );
+ALTER TABLE "enrollments" ADD FOREIGN KEY ("student_id") REFERENCES "students" ("id") ON DELETE CASCADE;
+ALTER TABLE "enrollments" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id") ON DELETE CASCADE;
