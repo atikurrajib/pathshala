@@ -1,8 +1,4 @@
-<div align="center">
-
-**# 🏫 Welcome to Pathshala! **
-
-</div>
+<h3 align="center">🏫 Welcome to Pathshala!</h3>
 
 ✨ **Pathshala** is a robust, full-stack Student Management System (SMS) designed to digitize and streamline academic administration. Built with a focus on high performance and security, it provides a centralized platform for managing student records, academic progress, and institutional data. ✨
 
