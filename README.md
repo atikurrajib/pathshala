@@ -1,14 +1,8 @@
-<div align="center">
-
 # 🏫 Welcome to Pathshala!
-
-</div>
 
 **Pathshala** is a robust, full-stack Student Management System designed to digitize and streamline academic administration. Built with a focus on high performance and security, it provides a centralized platform for managing student records, academic progress, and institutional data.
 
----
-
-## 💻 Project Overview
+## Project Overview
 
 Through **Pathshala**, we have developed a scalable solution for educational institutions to manage their day-to-day operations. The system ensures data integrity and provides real-time insights for administrators and teachers.
 
@@ -19,56 +13,28 @@ Through **Pathshala**, we have developed a scalable solution for educational ins
 * **Role-Based Access Control (RBAC):** Distinct portals and permissions for Admins, Teachers, and Students.
 * **Financial Management:** Tracking student fees, payments, and financial history.
 
----
-
-## ✅ Technology Stack
-
-### Frontend (Server-Side Templating)
-* **Templating Engine:** Go `html/template` (Standard Library)
-* **Architecture:** Modular Layouts (Header, Sidebar, Footer partials).
-* **Styling:** Custom CSS / Tailwind CSS.
-* **Client-Side:** Vanilla JS & **Chart.js** for administrative data visualization.
-
-### Backend (Server Side)
-* **Language:** Golang (Go)
-* **Architecture:** **Repository Pattern** for scalability and testing.
-* **Database:** PostgreSQL (Handled via internal/driver and dbrepo).
-* **Security:** Session-based Auth, Bcrypt password hashing, and CSRF protection.
-
-### Infrastructure & DevOps
-* **Containerization:** Docker & Docker Compose.
-* **Database Versioning:** SQL Migrations (stored in `/migrations`).
-* **Automation:** **Makefile** for streamlined development workflows.
-
----
-
-## 📂 Project Structure
+## Project Structure
 
 A clean and organized folder structure following the **Repository Pattern** for scalability and maintainability.
 
 ```bash
 pathshala/
-├── cmd/web/            # Main entry point (Server, Routes, Middlewares)
+├── cmd/
+│   └── server/
+│       └── main.go        # Entry point
 ├── internal/
-│   ├── config/         # Application configuration
-│   ├── driver/         # Database connection drivers (Postgres)
-│   ├── forms/          # Form validation & error handling logic
-│   ├── handlers/       # Request handlers & Business logic
-│   ├── helpers/        # Reusable helper functions
-│   ├── models/         # Database structs and schemas
-│   ├── repository/     # Data persistence layer (DBRepo implementation)
-├── ui/                 # Frontend assets
-│   ├── html/           # Go HTML templates (Layouts, Pages, Partials)
-│   └── static/         # Assets (CSS, JS, Images, Charts)
-├── migrations/         # SQL migration files for DB schema versioning
-├── Dockerfile          # Docker image configuration
-├── docker-compose.yml  # Multi-container setup (Go + Postgres)
-└── .github/workflows/  # CI/CD pipeline configuration
+│   ├── config/            # Database ও Env configurations
+│   ├── handlers/          # HTTP handlers (Controller)
+│   ├── models/            # Database Models/Structs
+│   └── repository/        # Database operations (SQL query)
+├── web/
+│   ├── template/          # Go HTML templates
+│   └── static/            # CSS, JS, Images
+├── go.mod
+└── .env                   # Database credentials
 
 ```
-
 ---
-
 ## 🏗️ System Architecture
 
 Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (SSR)**. The architecture follows the **Repository Pattern**, which decouples the business logic from the data storage layer, making the system highly maintainable and easy to test.
@@ -81,17 +47,13 @@ Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (S
 4. **Security First:** Implementation of session-based authentication, Bcrypt password hashing, and custom middleware for granular Role-Based Access Control (RBAC).
 5. **Concurrency:** Utilizes Go’s Goroutines for efficient background processing and non-blocking report generation.
 
----
-
-## 🚀 Future Roadmap
+## Future Roadmap
 
 * [ ] **Parent Portal:** Dedicated mobile-responsive view for parents to track child progress.
 * [ ] **Automated Notifications:** Email/SMS integration for attendance and fee alerts.
 * [ ] **Exam Management:** Modules for online MCQ exams and scheduling.
 
----
-
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -105,35 +67,23 @@ Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (S
 ```bash
 git clone [https://github.com/atikurrajib/pathshala.git](https://github.com/atikurrajib/pathshala.git)
 cd pathshala
-
 ```
-
-
 2. **Setup Environment:**
 ```bash
 cp .env.example .env # Configure your database credentials
-
 ```
-
-
 3. **Run migrations:** Apply the SQL files in `/migrations` to your database.
 4. **Run the application:**
 ```bash
 go run cmd/web/*.go
-
 ```
-
 ---
-
 ## 📬 Contact Me
-
 If you have any questions, suggestions, or just want to connect, feel free to reach out!
 
 * **LinkedIn:** [https://www.linkedin.com/in/atikurajib](https://www.linkedin.com/in/atikurajib)
 * **GitHub:** [@atikurrajib](https://github.com/atikurrajib)
-
 ---
-
 <div align="center">
   Thanks for checking out <strong>Pathshala</strong>! Happy Coding! 🚀
 </div>
