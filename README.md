@@ -1,72 +1,84 @@
-# 🎓 Welcome to Pathshala (Full-Stack LMS)
+# 🏫 Welcomne to Pathshala
 
-✨ **Pathshala** is a comprehensive, full-stack Learning Management System. It combines a high-performance **Golang** backend with a responsive **React** frontend to provide a seamless educational experience for both teachers and students. ✨
+✨ **Pathshala** is a robust, full-stack Student Management System (SMS) designed to digitize and streamline academic administration. Built with a focus on high performance and security, it provides a centralized platform for managing student records, academic progress, and institutional data. ✨
 
 ---
 
 ## 💻 Project Overview
 
-Pathshala is designed to bridge the gap between complex academic management and user-friendly interfaces. It handles everything from student registration and course material hosting to secure payment processing and progress tracking.
+Through **Pathshala**, we have developed a scalable solution for educational institutions to manage their day-to-day operations. The system ensures data integrity and provides real-time insights for administrators and teachers.
 
-### Core Modules:
-* **Student Dashboard:** Personalized view of enrolled courses, progress bars, and upcoming assignments.
-* **Instructor Studio:** Tools for educators to upload content, manage student lists, and track course performance.
-* **Admin Panel:** Global control over user roles, course approvals, and system analytics.
-* **Secure API:** A robust RESTful API layer ensuring data integrity and fast response times.
+### Key Features:
+* **Student Lifecycle Management:** Comprehensive records from admission to graduation.
+* **Academic Tracking:** Manage classes, sections, subjects, and student attendance.
+* **Result & Grading System:** Automated grade calculation and report card generation.
+* **Role-Based Access Control (RBAC):** Distinct portals and permissions for Admins, Teachers, and Students.
+* **Financial Management:** Tracking student fees, payments, and financial history.
 
 ---
 
 ## ✅ Technology Stack
 
-### Frontend (Client-Side)
-* **Framework:** React.js / Vite
-* **State Management:** Redux Toolkit or React Query
-* **Styling:** Tailwind CSS (for a modern, mobile-first UI)
-* **API Client:** Axios for seamless communication with the Go backend
+### Frontend (User Interface)
+* **Framework:** React.js (Vite)
+* **Styling:** Tailwind CSS (for a clean, professional dashboard)
+* **State Management:** React Query / Context API
+* **Communication:** Axios for REST API integration
 
-### Backend (Server-Side)
-* **Language:** Golang
-* **Framework:** Gin Gonic
-* **Database:** PostgreSQL (with SQLC for type-safe queries)
-* **Security:** PASETO/JWT Authentication & Bcrypt password hashing
+### Backend (Server Side)
+* **Language:** Golang (Go)
+* **Web Framework:** Gin Gonic
+* **Database:** PostgreSQL (with SQLC for type-safe database operations)
+* **Security:** PASETO & JWT for secure session management
+* **Documentation:** Swagger UI for API discovery
 
 ### Infrastructure & DevOps
 * **Containerization:** Docker & Docker Compose
-* **Orchestration:** Kubernetes (AWS EKS)
-* **CI/CD:** GitHub Actions for automated testing and deployment
-* **Documentation:** Swagger UI for API testing
+* **Cloud:** AWS (EKS for orchestration, RDS for managed DB)
+* **CI/CD:** GitHub Actions for automated building and testing
 
 ---
 
 ## 🏗️ System Architecture
 
-The application follows a decoupled architecture where the React frontend communicates with the Go backend via a JSON REST API. This allows for independent scaling of the frontend and backend services.
-
-
+Pathshala utilizes a modern **Decoupled Architecture**. The React frontend serves as a Single Page Application (SPA), communicating with the Golang backend via a high-speed RESTful API.
 
 ### 🔍 Technical Highlights:
-1.  **Database Efficiency:** Using PostgreSQL with optimized indexing for fast course searching and student record retrieval.
-2.  **State Consistency:** Implementing robust error handling on the frontend to manage API states (Loading, Success, Error) gracefully.
-3.  **Scalable Storage:** Integration with AWS S3 for hosting heavy course assets like videos and PDFs.
-4.  **Middleware Security:** Custom Go middleware for CORS handling, logging, and role-based route protection.
+1.  **Database Design:** Advanced schema designed with **DBML**, focusing on data normalization and referential integrity.
+2.  **Concurrency:** Leveraging Go’s goroutines for efficient report generation and bulk data processing.
+3.  **Security First:** Implementation of Bcrypt for password hashing and PASETO tokens to ensure top-tier authentication security.
+4.  **Scalable Deployment:** Ready for production with Kubernetes (K8s) deployment scripts and environment-specific configurations.
 
 ---
 
 ## 🚀 Future Roadmap
-* [ ] Integration of a real-time chat system for student-teacher interaction.
-* [ ] Live video streaming for virtual classrooms.
-* [ ] AI-driven course recommendations based on student performance.
+* [ ] **Parent Portal:** Dedicated mobile-responsive view for parents to track child progress.
+* [ ] **Automated Notifications:** Email/SMS integration for attendance and fee alerts.
+* [ ] **Exam Management:** Modules for online MCQ exams and scheduling.
 
 ---
 
 ## 🛠️ Getting Started
 
 ### Prerequisites
-* Go 1.2x
-* Node.js & npm/yarn
-* Docker & PostgreSQL
+* Go 1.2x+
+* Node.js (v18+)
+* PostgreSQL
+* Docker (Optional)
 
 ### Installation
-1. **Clone the repo:**
-   ```bash
-   git clone [https://github.com/your-username/pathshala.git](https://github.com/your-username/pathshala.git)
+1. **Clone the repository:**
+```bash
+git clone [https://github.com/your-username/pathshala.git](https://github.com/your-username/pathshala.git)
+
+2. **Backend Setup:**
+```bash
+cd pathshala-backend
+cp app.env.example app.env # Configure your DB credentials
+go run main.go
+
+3. **Frontend Setup:**
+```bash
+cd pathshala-frontend
+npm install
+npm run dev
