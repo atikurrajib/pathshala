@@ -5,3 +5,5 @@ CREATE TABLE "attendance" (
   "date" date DEFAULT CURRENT_DATE,
   "status" varchar(15) -- e.g., 'Present', 'Absent'
 );
+ALTER TABLE "attendance" ADD FOREIGN KEY ("student_id") REFERENCES "students" ("id") ON DELETE CASCADE;
+ALTER TABLE "attendance" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id") ON DELETE CASCADE;
