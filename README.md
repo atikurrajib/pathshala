@@ -65,7 +65,7 @@ Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (S
 
 1. **Clone the repository:**
 ```bash
-git clone [https://github.com/atikurrajib/pathshala.git](https://github.com/atikurrajib/pathshala.git)
+git clone https://github.com/atikurrajib/pathshala.git
 cd pathshala
 ```
 2. **Setup Environment:**
