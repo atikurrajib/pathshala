@@ -7,3 +7,4 @@ CREATE TABLE "students" (
   "session" varchar(20),
   "cgpa" decimal(3,2) DEFAULT 0.0
 );
+ALTER TABLE "students" ADD FOREIGN KEY ("department_id") REFERENCES "departments" ("id") ON DELETE SET NULL;
