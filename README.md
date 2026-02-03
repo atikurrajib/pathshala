@@ -35,11 +35,11 @@ pathshala/
 
 ```
 ---
-## 🏗️ System Architecture
+## System Architecture
 
 Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (SSR)**. The architecture follows the **Repository Pattern**, which decouples the business logic from the data storage layer, making the system highly maintainable and easy to test.
 
-### 🔍 Technical Highlights:
+### Technical Highlights:
 
 1. **Repository Pattern:** Decouples business logic from SQL queries, ensuring the codebase is scalable and database-agnostic.
 2. **Server-Side Templating:** Utilizes Go’s `html/template` for secure, high-performance rendering of the student dashboard and admin panels.
@@ -47,7 +47,7 @@ Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (S
 4. **Security First:** Implementation of session-based authentication, Bcrypt password hashing, and custom middleware for granular Role-Based Access Control (RBAC).
 5. **Concurrency:** Utilizes Go’s Goroutines for efficient background processing and non-blocking report generation.
 
-## Future Roadmap
+## Future Scope
 
 * [ ] **Parent Portal:** Dedicated mobile-responsive view for parents to track child progress.
 * [ ] **Automated Notifications:** Email/SMS integration for attendance and fee alerts.
@@ -78,7 +78,7 @@ cp .env.example .env # Configure your database credentials
 go run cmd/web/*.go
 ```
 ---
-## 📬 Contact Me
+## Contact Me
 If you have any questions, suggestions, or just want to connect, feel free to reach out!
 
 * **LinkedIn:** [https://www.linkedin.com/in/atikurajib](https://www.linkedin.com/in/atikurajib)
