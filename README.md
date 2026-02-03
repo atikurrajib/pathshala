@@ -4,7 +4,7 @@
 
 ---
 
-## 💻 Project Overview
+## Project Overview
 
 Through **Pathshala**, we have developed a scalable solution for educational institutions to manage their day-to-day operations. The system ensures data integrity and provides real-time insights for administrators and teachers.
 
@@ -17,68 +17,91 @@ Through **Pathshala**, we have developed a scalable solution for educational ins
 
 ---
 
-## ✅ Technology Stack
+## Technology Stack
 
-### Frontend (User Interface)
-* **Framework:** React.js (Vite)
-* **Styling:** Tailwind CSS (for a clean, professional dashboard)
-* **State Management:** React Query / Context API
-* **Communication:** Axios for REST API integration
+### Frontend (Server-Side Templating)
+* **Templating Engine:** Go `html/template` (Standard Library)
+* **Architecture:** Modular Layouts (Header, Sidebar, Footer partials).
+* **Styling:** Custom CSS / Tailwind CSS.
+* **Client-Side:** Vanilla JS & **Chart.js** for administrative data visualization.
 
 ### Backend (Server Side)
 * **Language:** Golang (Go)
-* **Web Framework:** Gin Gonic
-* **Database:** PostgreSQL (with SQLC for type-safe database operations)
-* **Security:** PASETO & JWT for secure session management
-* **Documentation:** Swagger UI for API discovery
+* **Architecture:** **Repository Pattern** for scalability and testing.
+* **Database:** PostgreSQL (Handled via internal/driver and dbrepo).
+* **Security:** Session-based Auth, Bcrypt password hashing, and CSRF protection.
 
 ### Infrastructure & DevOps
-* **Containerization:** Docker & Docker Compose
-* **Cloud:** AWS (EKS for orchestration, RDS for managed DB)
-* **CI/CD:** GitHub Actions for automated building and testing
+* **Containerization:** Docker & Docker Compose.
+* **Database Versioning:** SQL Migrations (stored in `/migrations`).
+* **Automation:** **Makefile** for streamlined development workflows.
 
 ---
 
-## 🏗️ System Architecture
+## Project Structure
 
-Pathshala utilizes a modern **Decoupled Architecture**. The React frontend serves as a Single Page Application (SPA), communicating with the Golang backend via a high-speed RESTful API.
+A clean and organized folder structure following the **Repository Pattern** for scalability and maintainability.
 
-### 🔍 Technical Highlights:
-1.  **Database Design:** Advanced schema designed with **DBML**, focusing on data normalization and referential integrity.
-2.  **Concurrency:** Leveraging Go’s goroutines for efficient report generation and bulk data processing.
-3.  **Security First:** Implementation of Bcrypt for password hashing and PASETO tokens to ensure top-tier authentication security.
-4.  **Scalable Deployment:** Ready for production with Kubernetes (K8s) deployment scripts and environment-specific configurations.
+```bash
+pathshala/
+├── cmd/web/                # Main entry point (Server, Routes, Middlewares)
+├── internal/
+│   ├── config/             # Application configuration
+│   ├── driver/             # Database connection drivers (Postgres)
+│   ├── forms/              # Form validation & error handling logic
+│   ├── handlers/           # Request handlers & Business logic
+│   ├── helpers/            # Reusable helper functions
+│   ├── models/             # Database structs and schemas
+│   ├── repository/         # Data persistence layer (DBRepo implementation)
+├── ui/                     # Frontend assets
+│   ├── html/               # Go HTML templates (Layouts, Pages, Partials)
+│   └── static/             # Assets (CSS, JS, Images, Charts)
+├── migrations/             # SQL migration files for DB schema versioning
+├── Dockerfile              # Docker image configuration
+├── docker-compose.yml      # Multi-container setup (Go + Postgres)
+└── .github/workflows/      # CI/CD pipeline configuration
 
 ---
 
-## 🚀 Future Roadmap
+## System Architecture
+
+Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (SSR)**. The architecture follows the **Repository Pattern**, which decouples the business logic from the data storage layer, making the system highly maintainable and easy to test.
+
+### Technical Highlights:
+
+1.  **Repository Pattern:** Decouples business logic from SQL queries, ensuring the codebase is scalable and database-agnostic.
+2.  **Server-Side Templating:** Utilizes Go’s `html/template` for secure, high-performance rendering of the student dashboard and admin panels.
+3.  **Database Design:** Advanced relational schema designed for data normalization, managed through version-controlled SQL migrations.
+4.  **Security First:** Implementation of session-based authentication, Bcrypt password hashing, and custom middleware for granular Role-Based Access Control (RBAC).
+5.  **Concurrency:** Utilizes Go’s Goroutines for efficient background processing and non-blocking report generation.
+
+---
+
+##  Future Roadmap
 * [ ] **Parent Portal:** Dedicated mobile-responsive view for parents to track child progress.
 * [ ] **Automated Notifications:** Email/SMS integration for attendance and fee alerts.
 * [ ] **Exam Management:** Modules for online MCQ exams and scheduling.
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 * Go 1.2x+
-* Node.js (v18+)
-* PostgreSQL
+* PostgreSQL 14+
 * Docker (Optional)
 
 ### Installation
 1. **Clone the repository:**
    ```bash
-git clone [https://github.com/your-username/pathshala.git](https://github.com/your-username/pathshala.git)
+git clone [https://github.com/atikurrajib/pathshala.git](https://github.com/atikurrajib/pathshala.git)
+cd pathshala
 
-2. **Backend Setup:**
+2. **Setup Environment:**
    ```bash
-cd pathshala-backend
-cp app.env.example app.env # Configure your DB credentials
-go run main.go
+cp .env.example .env # Configure your database credentials
 
-3. **Frontend Setup:**
+3. **Run migrations:** Apply the SQL files in /migrations to your database.
+4. **Run the application:**
    ```bash
-cd pathshala-frontend
-npm install
-npm run dev
+go run cmd/web/*.go
