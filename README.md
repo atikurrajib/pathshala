@@ -1,107 +1,156 @@
-<h1 align="center">Welcome to Pathshala!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathshala Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <style>
+        body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+            background-color: #f6f8fa;
+        }
+        .markdown-body {
+            background-color: white;
+            padding: 40px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 767px) {
+            body { padding: 15px; }
+            .markdown-body { padding: 20px; }
+        }
+        h1 { text-align: center; border-bottom: none !important; }
+        .center-text { text-align: center; margin-bottom: 2rem; }
+        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    </style>
+</head>
+<body>
 
-**Pathshala** is a robust, full-stack Student Management System (SMS) designed to digitize and streamline academic administration. Built with a focus on high performance and security, it provides a centralized platform for managing student records, academic progress, and institutional data.
+<article class="markdown-body">
+    <div class="center-text">
+        <h1>🏫 Welcome to Pathshala!</h1>
+        <p><strong>Pathshala</strong> is a robust, full-stack Student Management System (SMS) designed to digitize and streamline academic administration. Built with a focus on high performance and security, it provides a centralized platform for managing student records, academic progress, and institutional data.</p>
+    </div>
 
----
+    <hr>
 
-## Project Overview
+    <section id="project-overview">
+        <h2>💻 Project Overview</h2>
+        <p>Through <strong>Pathshala</strong>, we have developed a scalable solution for educational institutions to manage their day-to-day operations. The system ensures data integrity and provides real-time insights for administrators and teachers.</p>
+        
+        <h3>Key Features:</h3>
+        <ul>
+            <li><strong>Student Lifecycle Management:</strong> Comprehensive records from admission to graduation.</li>
+            <li><strong>Academic Tracking:</strong> Manage classes, sections, subjects, and student attendance.</li>
+            <li><strong>Result & Grading System:</strong> Automated grade calculation and report card generation.</li>
+            <li><strong>Role-Based Access Control (RBAC):</strong> Distinct portals and permissions for Admins, Teachers, and Students.</li>
+            <li><strong>Financial Management:</strong> Tracking student fees, payments, and financial history.</li>
+        </ul>
+    </section>
 
-Through **Pathshala**, we have developed a scalable solution for educational institutions to manage their day-to-day operations. The system ensures data integrity and provides real-time insights for administrators and teachers.
+    <hr>
 
-### Key Features:
-* **Student Lifecycle Management:** Comprehensive records from admission to graduation.
-* **Academic Tracking:** Manage classes, sections, subjects, and student attendance.
-* **Result & Grading System:** Automated grade calculation and report card generation.
-* **Role-Based Access Control (RBAC):** Distinct portals and permissions for Admins, Teachers, and Students.
-* **Financial Management:** Tracking student fees, payments, and financial history.
+    <section id="technology-stack">
+        <h2>✅ Technology Stack</h2>
+        
+        <h3>Frontend (Server-Side Templating)</h3>
+        <ul>
+            <li><strong>Templating Engine:</strong> Go <code>html/template</code> (Standard Library)</li>
+            <li><strong>Architecture:</strong> Modular Layouts (Header, Sidebar, Footer partials).</li>
+            <li><strong>Styling:</strong> Custom CSS / Tailwind CSS.</li>
+            <li><strong>Client-Side:</strong> Vanilla JS & <strong>Chart.js</strong> for administrative data visualization.</li>
+        </ul>
 
----
+        <h3>Backend (Server Side)</h3>
+        <ul>
+            <li><strong>Language:</strong> Golang (Go)</li>
+            <li><strong>Architecture:</strong> <strong>Repository Pattern</strong> for scalability and testing.</li>
+            <li><strong>Database:</strong> PostgreSQL (Handled via internal/driver and dbrepo).</li>
+            <li><strong>Security:</strong> Session-based Auth, Bcrypt password hashing, and CSRF protection.</li>
+        </ul>
 
-## Technology Stack
+        <h3>Infrastructure & DevOps</h3>
+        <ul>
+            <li><strong>Containerization:</strong> Docker & Docker Compose.</li>
+            <li><strong>Database Versioning:</strong> SQL Migrations (stored in <code>/migrations</code>).</li>
+            <li><strong>Automation:</strong> <strong>Makefile</strong> for streamlined development workflows.</li>
+        </ul>
+    </section>
 
-### Frontend (Server-Side Templating)
-* **Templating Engine:** Go `html/template` (Standard Library)
-* **Architecture:** Modular Layouts (Header, Sidebar, Footer partials).
-* **Styling:** Custom CSS / Tailwind CSS.
-* **Client-Side:** Vanilla JS & **Chart.js** for administrative data visualization.
+    <hr>
 
-### Backend (Server Side)
-* **Language:** Golang (Go)
-* **Architecture:** **Repository Pattern** for scalability and testing.
-* **Database:** PostgreSQL (Handled via internal/driver and dbrepo).
-* **Security:** Session-based Auth, Bcrypt password hashing, and CSRF protection.
-
-### Infrastructure & DevOps
-* **Containerization:** Docker & Docker Compose.
-* **Database Versioning:** SQL Migrations (stored in `/migrations`).
-* **Automation:** **Makefile** for streamlined development workflows.
-
----
-
-## Project Structure
-
-A clean and organized folder structure following the **Repository Pattern** for scalability and maintainability.
-
-```bash
-pathshala/
-├── cmd/web/                # Main entry point (Server, Routes, Middlewares)
+    <section id="project-structure">
+        <h2>📂 Project Structure</h2>
+        <p>A clean and organized folder structure following the <strong>Repository Pattern</strong>.</p>
+<pre><code>pathshala/
+├── cmd/web/            # Main entry point (Server, Routes, Middlewares)
 ├── internal/
-│   ├── config/             # Application configuration
-│   ├── driver/             # Database connection drivers (Postgres)
-│   ├── forms/              # Form validation & error handling logic
-│   ├── handlers/           # Request handlers & Business logic
-│   ├── helpers/            # Reusable helper functions
-│   ├── models/             # Database structs and schemas
-│   ├── repository/         # Data persistence layer (DBRepo implementation)
-├── ui/                     # Frontend assets
-│   ├── html/               # Go HTML templates (Layouts, Pages, Partials)
-│   └── static/             # Assets (CSS, JS, Images, Charts)
-├── migrations/             # SQL migration files for DB schema versioning
-├── Dockerfile              # Docker image configuration
-├── docker-compose.yml      # Multi-container setup (Go + Postgres)
-└── .github/workflows/      # CI/CD pipeline configuration
+│   ├── config/         # Application configuration
+│   ├── driver/         # Database connection drivers (Postgres)
+│   ├── forms/          # Form validation & error handling logic
+│   ├── handlers/       # Request handlers & Business logic
+│   ├── helpers/        # Reusable helper functions
+│   ├── models/         # Database structs and schemas
+│   ├── repository/     # Data persistence layer (DBRepo implementation)
+├── ui/                 # Frontend assets
+│   ├── html/           # Go HTML templates (Layouts, Pages, Partials)
+│   └── static/         # Assets (CSS, JS, Images, Charts)
+├── migrations/         # SQL migration files for DB schema versioning
+├── Dockerfile          # Docker image configuration
+├── docker-compose.yml  # Multi-container setup (Go + Postgres)
+└── .github/workflows/  # CI/CD pipeline configuration</code></pre>
+    </section>
 
----
+    <hr>
 
-## System Architecture
+    <section id="system-architecture">
+        <h2>🏗️ System Architecture</h2>
+        <p>Pathshala is built as a <strong>Structured Monolith</strong> using <strong>Server-Side Rendering (SSR)</strong>. The architecture follows the <strong>Repository Pattern</strong>, which decouples the business logic from the data storage layer.</p>
+        
+        
 
-Pathshala is built as a **Structured Monolith** using **Server-Side Rendering (SSR)**. The architecture follows the **Repository Pattern**, which decouples the business logic from the data storage layer, making the system highly maintainable and easy to test.
+        <h3>🔍 Technical Highlights:</h3>
+        <ol>
+            <li><strong>Repository Pattern:</strong> Decouples business logic from SQL queries, ensuring the codebase is scalable.</li>
+            <li><strong>Server-Side Templating:</strong> Utilizes Go’s <code>html/template</code> for secure rendering.</li>
+            <li><strong>Database Design:</strong> Advanced relational schema managed through version-controlled SQL migrations.</li>
+            <li><strong>Security First:</strong> Implementation of session-based authentication and Bcrypt hashing.</li>
+            <li><strong>Concurrency:</strong> Utilizes Go’s Goroutines for non-blocking report generation.</li>
+        </ol>
+    </section>
 
-### Technical Highlights:
+    <hr>
 
-1.  **Repository Pattern:** Decouples business logic from SQL queries, ensuring the codebase is scalable and database-agnostic.
-2.  **Server-Side Templating:** Utilizes Go’s `html/template` for secure, high-performance rendering of the student dashboard and admin panels.
-3.  **Database Design:** Advanced relational schema designed for data normalization, managed through version-controlled SQL migrations.
-4.  **Security First:** Implementation of session-based authentication, Bcrypt password hashing, and custom middleware for granular Role-Based Access Control (RBAC).
-5.  **Concurrency:** Utilizes Go’s Goroutines for efficient background processing and non-blocking report generation.
+    <section id="getting-started">
+        <h2>🛠️ Getting Started</h2>
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Go 1.2x+</li>
+            <li>PostgreSQL 14+</li>
+            <li>Docker (Optional)</li>
+        </ul>
 
----
-
-##  Future Roadmap
-* [ ] **Parent Portal:** Dedicated mobile-responsive view for parents to track child progress.
-* [ ] **Automated Notifications:** Email/SMS integration for attendance and fee alerts.
-* [ ] **Exam Management:** Modules for online MCQ exams and scheduling.
-
----
-
-## Getting Started
-
-### Prerequisites
-* Go 1.2x+
-* PostgreSQL 14+
-* Docker (Optional)
-
-### Installation
-1. **Clone the repository:**
-   ```bash
-git clone [https://github.com/atikurrajib/pathshala.git](https://github.com/atikurrajib/pathshala.git)
+        <h3>Installation</h3>
+<pre><code># 1. Clone the repository
+git clone https://github.com/atikurrajib/pathshala.git
 cd pathshala
 
-2. **Setup Environment:**
-   ```bash
-cp .env.example .env # Configure your database credentials
+# 2. Setup Environment
+cp .env.example .env
 
-3. **Run migrations:** Apply the SQL files in /migrations to your database.
-4. **Run the application:**
-   ```bash
-go run cmd/web/*.go
+# 3. Run migrations
+# Apply SQL files in /migrations to your DB
+
+# 4. Run the application
+go run cmd/web/*.go</code></pre>
+    </section>
+</article>
+
+</body>
+</html>
