@@ -6,3 +6,4 @@ CREATE TABLE "class_routines" (
   "end_time" time,
   "room_no" varchar(20)
 );
+ALTER TABLE "class_routines" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id") ON DELETE CASCADE;
