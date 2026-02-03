@@ -4,3 +4,5 @@ CREATE TABLE "course_assignments" (
   "course_id" integer REFERENCES "courses" ("id") ON DELETE CASCADE,
   "semester" varchar(20)
 );
+ALTER TABLE "course_assignments" ADD FOREIGN KEY ("teacher_id") REFERENCES "teachers" ("id") ON DELETE CASCADE;
+ALTER TABLE "course_assignments" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id") ON DELETE CASCADE;
