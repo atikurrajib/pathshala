@@ -1,32 +1,29 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# --- Binaries and Executables ---
 *.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+pathshala
 
-# Test binary, built with `go test -c`
-*.test
+# --- Docker Specific ---
+# Ignore Docker-related logs and local overrides
+.docker/
+docker-compose.override.yml*
 
-# Code coverage profiles and other test artifacts
-*.out
-coverage.*
-*.coverprofile
-profile.cov
+# --- Database Data (Crucial) ---
+# Ignore the local folder where Docker persists PostgreSQL data
+postgres_data/
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
-go.work.sum
-
-# env file
+# --- Environment and Secrets ---
+# Never push your database credentials to GitHub
 .env
+.env.dev
+.env.prod
+.env.local
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# --- Dependency Management ---
+vendor/
+go.sum
+
+# --- IDE and OS Generated Files ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
