@@ -1,4 +1,4 @@
- <h1 align = "center"> Welcome to Pathshala! </h1>
+<h1 align = "center"> Welcome to Pathshala! </h1>
 
 **Pathshala** is a robust, full-stack Student Management System designed to digitize and streamline academic administration. Built with a focus on high performance and security, it provides a centralized platform for managing student records, academic progress, and institutional data.
 
@@ -75,14 +75,8 @@ cp .env.example .env # Configure your database credentials
 3. **Run migrations:** Apply the SQL files in `/migrations` to your database.
 4. **Run the application:**
 ```bash
-go run cmd/web/*.go
+go run cmd/server/main.go
 ```
----
-## Contact Me
-If you have any questions, suggestions, or just want to connect, feel free to reach out!
-
-* **LinkedIn:** [https://www.linkedin.com/in/atikurajib](https://www.linkedin.com/in/atikurajib)
-* **GitHub:** [@atikurrajib](https://github.com/atikurrajib)
 ---
 <div align="center">
   Thanks for checking out <strong>Pathshala</strong>! Happy Coding! 🚀
