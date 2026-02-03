@@ -6,3 +6,4 @@ CREATE TABLE "teachers" (
   "designation" varchar(100),
   "department_id" integer REFERENCES "departments" ("id") ON DELETE SET NULL
 );
+ALTER TABLE "teachers" ADD FOREIGN KEY ("department_id") REFERENCES "departments" ("id") ON DELETE SET NULL;
