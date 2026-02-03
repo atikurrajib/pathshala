@@ -5,3 +5,4 @@ CREATE TABLE "courses" (
   "credits" integer NOT NULL,
   "department_id" integer REFERENCES "departments" ("id") ON DELETE CASCADE
 );
+ALTER TABLE "courses" ADD FOREIGN KEY ("department_id") REFERENCES "departments" ("id") ON DELETE CASCADE;
