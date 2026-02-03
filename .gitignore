@@ -1,29 +1,47 @@
 # --- Binaries and Executables ---
+# Go compiler outputs and local binaries
 *.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
 pathshala
+main
 
 # --- Docker Specific ---
-# Ignore Docker-related logs and local overrides
+# Ignore Docker data and local overrides
 .docker/
 docker-compose.override.yml*
 
-# --- Database Data (Crucial) ---
+# --- Database Data (Very Important) ---
 # Ignore the local folder where Docker persists PostgreSQL data
 postgres_data/
 
 # --- Environment and Secrets ---
-# Never push your database credentials to GitHub
+# Never push your database passwords or API keys to GitHub
 .env
+.env.local
+.env.*.local
 .env.dev
 .env.prod
-.env.local
 
 # --- Dependency Management ---
+# Go modules are tracked via go.mod, no need to push vendor or sums usually
 vendor/
 go.sum
 
-# --- IDE and OS Generated Files ---
+# --- IDE and Editors ---
+# VS Code, IntelliJ, or other editor local settings
 .vscode/
 .idea/
-.DS_Store
+*.suo
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# --- OS Generated Files ---
+# Windows and macOS system files
 Thumbs.db
+db.lock
+.DS_Store
