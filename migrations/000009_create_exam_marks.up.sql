@@ -6,3 +6,5 @@ CREATE TABLE "exam_marks" (
   "obtained_marks" decimal(5,2),
   "total_marks" decimal(5,2)
 );
+ALTER TABLE "exam_marks" ADD FOREIGN KEY ("student_id") REFERENCES "students" ("id") ON DELETE CASCADE;
+ALTER TABLE "exam_marks" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id") ON DELETE CASCADE;
