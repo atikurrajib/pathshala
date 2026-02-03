@@ -77,7 +77,6 @@ cp .env.example .env # Configure your database credentials
 ```bash
 go run cmd/server/main.go
 ```
----
 <div align="center">
   Thanks for checking out <strong>Pathshala</strong>! Happy Coding! 🚀
 </div>
