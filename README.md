@@ -121,3 +121,19 @@ cp .env.example .env # Configure your database credentials
 ```bash
 go run cmd/web/*.go
 
+```
+
+---
+
+## 📬 Contact Me
+
+If you have any questions, suggestions, or just want to connect, feel free to reach out!
+
+* **LinkedIn:** [https://www.linkedin.com/in/atikurajib](https://www.linkedin.com/in/atikurajib)
+* **GitHub:** [@atikurrajib](https://github.com/atikurrajib)
+
+---
+
+<div align="center">
+  Thanks for checking out <strong>Pathshala</strong>! Happy Coding! 🚀
+</div>
