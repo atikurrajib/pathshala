@@ -29,12 +29,16 @@ pathshala/
 │   ├── handlers/          # HTTP handlers (Controllers)
 │   ├── middleware/        # Auth & RBAC Middleware
 │   ├── models/            # Database Structs & Interfaces
-│   └── repository/        # SQL Database operations
+│   ├── repository/        # SQL Database operations
+│   ├── router/
+│   └── utils/
 ├── web/
 │   ├── template/          # Go HTML templates (SSR)
 │   └── static/            # CSS, JS, Images
 ├── migrations/            # SQL Migration files
 ├── go.mod
+├── .gitignore
+├── README.md
 ├── .env                   # Environment variables
 ├── Dockerfile             # Defines how to build your app image
 ├── docker-compose.yml     # Runs App + Database together
