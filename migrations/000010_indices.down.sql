@@ -1,0 +1,9 @@
+DROP INDEX IF EXISTS idx_students_dept;
+DROP INDEX IF EXISTS idx_teachers_dept;
+DROP INDEX IF EXISTS idx_courses_dept;
+DROP INDEX IF EXISTS idx_enrollments_student;
+DROP INDEX IF EXISTS idx_enrollments_course;
+DROP INDEX IF EXISTS idx_exam_marks_student;
+DROP INDEX IF EXISTS idx_attendance_student;
+DROP INDEX IF EXISTS idx_attendance_date;
+DROP INDEX IF EXISTS idx_students_name;
