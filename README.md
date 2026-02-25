@@ -1,8 +1,10 @@
-### Pathshala
+<h1>Pathshala</h1>
 
 **Pathshala** is a scalable full-stack web application designed to streamline institutional management. Through integrated modules for attendance tracking, course handling, and performance analytics, it empowers administrators and teachers with actionable insights while ensuring a seamless academic experience for students.
 
-## Screenshot
+<h4>Screenshot</h4>
 
-## Tech Stack
-Go (Golang) | PostgreSQL | Go Templates (SSR) | JavaScript | Chart.js | Tailwind CSS | Docker | HTML 5 | CSS 3 | Figma
+<br>
+
+<h4>Tech Stack</h4> <br>
+Go (Golang) | PostgreSQL | Go Templates (SSR) | Docker | JavaScript | HTML | CSS | Figma
