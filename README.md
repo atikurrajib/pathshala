@@ -1,10 +1,8 @@
 <h1 align = "center"> Pathshala </h1>
 
----
-
 ## 📖 Project Overview
 
-Through **Pathshala**, we have developed a scalable solution for educational institutions to manage their day-to-day operations. The system ensures data integrity and provides real-time insights for administrators and teachers.
+Through **Pathshala**, we have developed a scalable web solution to to automate courses, student attendances, performances and some administrative workflows. The system ensures data integrity and provides real-time insights for administrators and teachers.
 
 ### 🌟 Key Features:
 * **Student Lifecycle Management:** Comprehensive records from admission to graduation.
@@ -12,37 +10,6 @@ Through **Pathshala**, we have developed a scalable solution for educational ins
 * **Result & Grading System:** Automated grade calculation and report card generation.
 * **Role-Based Access Control (RBAC):** Distinct portals and permissions for Admins, Teachers, and Students.
 * **Financial Management:** Tracking student fees, payments, and financial history.
-
-## Project Structure
-
-We follow the **Standard Go Project Layout** to ensure modularity and maintainability.
-
-```bash
-pathshala/
-├── cmd/
-│   └── server/
-│       └── main.go        # Application Entry point
-├── internal/
-│   ├── config/            # Database & Env configurations
-│   ├── handlers/          # HTTP handlers (Controllers)
-│   ├── middleware/        # Auth & RBAC Middleware
-│   ├── models/            # Database Structs & Interfaces
-│   ├── repository/        # SQL Database operations
-│   ├── router/
-│   └── utils/
-├── web/
-│   ├── template/          # Go HTML templates (SSR)
-│   └── static/            # CSS, JS, Images
-├── migrations/            # SQL Migration files
-├── go.mod
-├── .gitignore
-├── README.md
-├── .env                   # Environment variables
-├── Dockerfile             # Defines how to build your app image
-├── docker-compose.yml     # Runs App + Database together
-└── .dockerignore          # Ignores unnecessary files
-
-```
 
 ---
 
